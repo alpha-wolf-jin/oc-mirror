@@ -232,6 +232,25 @@ Writing image mapping to oc-mirror-workspace/results-1674629926/mapping.txt
 Writing UpdateService manifests to oc-mirror-workspace/results-1674629926
 Writing ICSP manifests to oc-mirror-workspace/results-1674629926
 
+# tree 
+.
+├── mirror_seq1_000000.tar
+├── mirror_seq1_000001.tar
+├── mirror_seq1_000002.tar
+├── mirror_seq1_000003.tar
+├── oc-mirror-workspace
+│   ├── publish
+│   └── results-1674629926
+│       ├── charts
+│       ├── imageContentSourcePolicy.yaml
+│       ├── mapping.txt
+│       ├── release-signatures
+│       │   └── signature-sha256-22e149142517dfcc.json
+│       └── updateService.yaml
+└── publish
+
+6 directories, 8 files
+
 
 ```
 
