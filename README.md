@@ -449,3 +449,7 @@ imagecontentsourcepolicy.operator.openshift.io/operator-compliance created
 ```
 # oc patch OperatorHub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": true}]'
 ```
+
+
+![Install telnet](images/oc-mirror-operator-01.png)
+
