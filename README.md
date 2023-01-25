@@ -14,7 +14,10 @@ git push -u origin main
 git add . ; git commit -a -m "update README" ; git push -u origin main
 ```
 **Reference:**
+
 https://docs.openshift.com/container-platform/4.11/installing/disconnected_install/installing-mirroring-disconnected.html#installing-mirroring-disconnected
+
+https://zhimin-wen.medium.com/openshift-4-10-image-mirroring-for-airgap-environment-f6bed61ea719
 
 ## Installing the oc-mirror OpenShift CLI plugin
 
@@ -151,6 +154,30 @@ aW5pdDowNDY5dw==
 
 7. Run the oc mirror command to mirror the images from the specified image set configuration to a specified registry:
 ```
+  # Output OpenShift release versions
+  oc-mirror list releases
+  
+  # Output all OpenShift release channels list for a release
+  oc-mirror list releases --version=4.11
+  
+  # List all OpenShift versions in a specified channel
+  oc-mirror list releases --channel=stable-4.11
+  
+  # List all OpenShift channels for a specific version
+  oc-mirror list releases --channels --version=4.11
+
+# oc-mirror list releases --version=4.11
+Listing stable channels. Use --channel=<channel-name> to filter.
+Use oc-mirror list release --channels to discover other channels.
+
+Channel: stable-4.11
+Architecture: amd64
+4.10.3
+4.10.4
+...
+4.11.18
+...
+
 # cat imageset-platform.yaml
 kind: ImageSetConfiguration
 apiVersion: mirror.openshift.io/v1alpha2
@@ -171,4 +198,50 @@ mirror:
 
 # oc mirror --config=imageset-platform.yaml file:///root/labs/media/ocp4.11.18
 ```
+
+
+
+# Mirror settings for operator images
+
+1. List available operator index for this version
+```
+# oc mirror list operators --catalogs --version 4.11
+Available OpenShift OperatorHub catalogs:
+OpenShift 4.11:
+registry.redhat.io/redhat/redhat-operator-index:v4.11
+registry.redhat.io/redhat/certified-operator-index:v4.11
+registry.redhat.io/redhat/community-operator-index:v4.11
+registry.redhat.io/redhat/redhat-marketplace-index:v4.11
+```
+
+2. List the operators in the index
+
+```
+# oc mirror list operators --catalog=registry.redhat.io/redhat/redhat-operator-index:v4.11
+NAME                                          DISPLAY NAME                                                                 DEFAULT CHANNEL
+3scale-operator                               Red Hat Integration - 3scale - Managed Application Services                  threescale-mas
+advanced-cluster-management                   Advanced Cluster Management for Kubernetes                                   release-2.6
+amq-broker-rhel8                              Red Hat Integration - AMQ Broker for RHEL 8 (Multiarch)                      7.10.x
+amq-online                                    Red Hat Integration - AMQ Online                                             stable
+...
+local-storage-operator                        Local Storage                                                                stable
+...
+```
+
+3. List individual operator’s channel
+```
+# oc mirror list operators --catalog=registry.redhat.io/redhat/redhat-operator-index:v4.11 --package=local-storage-operator
+NAME                    DISPLAY NAME   DEFAULT CHANNEL
+local-storage-operator  Local Storage  stable
+
+PACKAGE                 CHANNEL  HEAD
+local-storage-operator  stable   local-storage-operator.4.11.0-202301062015
+
+# oc mirror list operators --catalog=registry.redhat.io/redhat/redhat-operator-index:v4.11 --package=local-storage-operator --channel=stable
+VERSIONS
+4.11.0-202301062015
+```
+
+
+
 
