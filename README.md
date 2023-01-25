@@ -369,4 +369,75 @@ Creating archive /root/labs/media/compliance/mirror_seq1_000000.tar
 
 ```
 # oc mirror --from=./mirror_seq1_000000.tar docker://helper.example.com:8443/compliance
+...
+sha256:45a618f8314e970a48d2c19eef5b58fd5f588b9ba55335a916d27f242b74c7fe helper.example.com:8443/compliance/compliance/openshift-compliance-rhel8-operator
+sha256:7c413b89d16cec0a73ebf6184e8fdfb6ec073d3dac6b5616f7cf73e0b9af695d helper.example.com:8443/compliance/compliance/openshift-compliance-rhel8-operator
+sha256:148c34c07c02b57bd6ae4c03c87a89ae30f7b4b84b3de768aca4ca853853891c helper.example.com:8443/compliance/compliance/openshift-compliance-rhel8-operator
+sha256:d5ffc7bb776bc1a3717a37ae0a08990a4db2313f3cbc1f1313ce2765ed39b011 helper.example.com:8443/compliance/compliance/openshift-compliance-rhel8-operator:7c36e8d6
+info: Mirroring completed in 8.78s (24.46MB/s)
+Wrote release signatures to oc-mirror-workspace/results-1674637726
+Rendering catalog image "helper.example.com:8443/compliance/redhat/redhat-operator-index:v4.11" with file-based catalog 
+Writing image mapping to oc-mirror-workspace/results-1674637726/mapping.txt
+Writing CatalogSource manifests to oc-mirror-workspace/results-1674637726
+Writing ICSP manifests to oc-mirror-workspace/results-1674637726
+
+[root@helper compliance]# tree
+.
+├── mirror_seq1_000000.tar
+├── oc-mirror-workspace
+│   ├── publish
+│   └── results-1674637726
+│       ├── catalogSource-redhat-operator-index.yaml
+│       ├── charts
+│       ├── imageContentSourcePolicy.yaml
+│       ├── mapping.txt
+│       └── release-signatures
+└── publish
+
+6 directories, 4 files
+
+```
+
+**Apply the generated catalog source file from mirroring, you may want to rename it such as below**
+
+**Change to compliance-operator-index from redhat-operator-index**
+
+```
+
+# vi oc-mirror-workspace/results-1674637726/catalogSource-redhat-operator-index.yaml
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: compliance-operator-index
+  namespace: openshift-marketplace
+spec:
+  image: helper.example.com:8443/compliance/redhat/redhat-operator-index:v4.11
+  sourceType: grpc
+
+```
+
+**Change to operator-compliance from operator-0**
+
+```
+# cat oc-mirror-workspace/results-1674637726/imageContentSourcePolicy.yaml
+---
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  labels:
+    operators.openshift.org/catalog: "true"
+  name: operator-compliance
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - helper.example.com:8443/compliance/compliance
+    source: registry.redhat.io/compliance
+  - mirrors:
+    - helper.example.com:8443/compliance/redhat
+    source: registry.redhat.io/redhat
+```
+
+**Apply the YAML files from the results directory to the cluster**
+```
+
 ```
