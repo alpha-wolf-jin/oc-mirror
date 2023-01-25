@@ -248,6 +248,34 @@ Writing ICSP manifests to oc-mirror-workspace/results-1674629926
 │       │   └── signature-sha256-22e149142517dfcc.json
 │       └── updateService.yaml
 └── publish
+```
+
+```
+# cat oc-mirror-workspace/results-1674629926/imageContentSourcePolicy.yaml
+---
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: generic-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - helper.example.com:8443/ubi8
+    source: registry.access.redhat.com/ubi8
+---
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: release-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - helper.example.com:8443/openshift/release
+    source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+  - mirrors:
+    - helper.example.com:8443/openshift/release-images
+    source: quay.io/openshift-release-dev/ocp-release
+```
 
 6 directories, 8 files
 
