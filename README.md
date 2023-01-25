@@ -326,5 +326,25 @@ VERSIONS
 ```
 
 
+# Mirror Operator to disk
 
+```
+# cat imageset-operator.yaml
+kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v1alpha2
+archiveSize: 4
+storageConfig:
+  local:
+    path: /root/labs/media/compliance
+mirror:
+  operators:
+  - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.11
+    packages:
+    - name: compliance-operator
+      channels:
+      - name: release-0.1
+
+# oc mirror --config=imageset-operator.yaml file:///root/labs/media/compliance
+
+```
 

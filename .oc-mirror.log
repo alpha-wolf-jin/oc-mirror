@@ -1083,3 +1083,8 @@ Creating archive /root/labs/media/ocp4.11.18/mirror_seq1_000000.tar
 Creating archive /root/labs/media/ocp4.11.18/mirror_seq1_000001.tar
 Creating archive /root/labs/media/ocp4.11.18/mirror_seq1_000002.tar
 Creating archive /root/labs/media/ocp4.11.18/mirror_seq1_000003.tar
+Creating directory: /root/labs/media/compliance/oc-mirror-workspace/src/publish
+Creating directory: /root/labs/media/compliance/oc-mirror-workspace/src/v2
+Creating directory: /root/labs/media/compliance/oc-mirror-workspace/src/charts
+Creating directory: /root/labs/media/compliance/oc-mirror-workspace/src/release-signatures
+No metadata detected, creating new workspace
