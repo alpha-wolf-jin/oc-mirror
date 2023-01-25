@@ -250,6 +250,7 @@ Writing ICSP manifests to oc-mirror-workspace/results-1674629926
 └── publish
 ```
 
+With the mirrored registry, the air-gapped installation can be performed with the following configuration.
 ```
 # cat oc-mirror-workspace/results-1674629926/imageContentSourcePolicy.yaml
 ---
