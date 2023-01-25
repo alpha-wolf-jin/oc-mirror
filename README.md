@@ -439,5 +439,13 @@ spec:
 
 **Apply the YAML files from the results directory to the cluster**
 ```
+# oc apply -f ./oc-mirror-workspace/results-1674637726/
+catalogsource.operators.coreos.com/compliance-operator-index created
+imagecontentsourcepolicy.operator.openshift.io/operator-compliance created
 
+```
+
+**disable all the default operator sources**
+```
+# oc patch OperatorHub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": true}]'
 ```
