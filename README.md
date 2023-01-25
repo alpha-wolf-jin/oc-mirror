@@ -197,8 +197,43 @@ mirror:
     graph: true
 
 # oc mirror --config=imageset-platform.yaml file:///root/labs/media/ocp4.11.18
+...
+uploading: file://openshift/release-images sha256:48748a1b43a9ce550e97c4fd9441f5918a1262a378b11da3f8331ca6c99166f4 857.9KiB
+sha256:22e149142517dfccb47be828f012659b1ccf71d26620e6f62468c264a7ce7863 file://openshift/release-images:4.11.18-x86_64
+info: Mirroring completed in 51m55.47s (4.836MB/s)
+Creating archive /root/labs/media/ocp4.11.18/mirror_seq1_000000.tar
+Creating archive /root/labs/media/ocp4.11.18/mirror_seq1_000001.tar
+Creating archive /root/labs/media/ocp4.11.18/mirror_seq1_000002.tar
+Creating archive /root/labs/media/ocp4.11.18/mirror_seq1_000003.tar
 ```
 
+## Mirroring from disk to mirror
+
+```
+# cd /root/labs/media/ocp4.11.18/
+# tree
+.
+├── mirror_seq1_000000.tar
+├── mirror_seq1_000001.tar
+├── mirror_seq1_000002.tar
+├── mirror_seq1_000003.tar
+├── oc-mirror-workspace
+└── publish
+
+# oc mirror --from=./ docker://helper.example.com:8443
+...
+info: Planning completed in 310ms
+uploading: helper.example.com:8443/openshift/release sha256:f903aebcb9693cbb029800b01ee767ec906f9261535fbbcd09429eb8b5928069 22.94MiB
+uploading: helper.example.com:8443/openshift/release sha256:7fc593bf62a0d2d13f0d9f8c24bc8c90e4ed3c49f6c9933d27adf157c092929c 17.19KiB
+sha256:119575c2aa477a5216fc18144f23ff48666e950ad7bca70d13af93cc6f2a54d2 helper.example.com:8443/openshift/release:4.11.18-x86_64-telemeter
+info: Mirroring completed in 6.42s (3.748MB/s)
+Wrote release signatures to oc-mirror-workspace/results-1674629926
+Writing image mapping to oc-mirror-workspace/results-1674629926/mapping.txt
+Writing UpdateService manifests to oc-mirror-workspace/results-1674629926
+Writing ICSP manifests to oc-mirror-workspace/results-1674629926
+
+
+```
 
 
 # Mirror settings for operator images
