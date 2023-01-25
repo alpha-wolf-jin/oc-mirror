@@ -1088,3 +1088,110 @@ Creating directory: /root/labs/media/compliance/oc-mirror-workspace/src/v2
 Creating directory: /root/labs/media/compliance/oc-mirror-workspace/src/charts
 Creating directory: /root/labs/media/compliance/oc-mirror-workspace/src/release-signatures
 No metadata detected, creating new workspace
+wrote mirroring manifests to /root/labs/media/compliance/oc-mirror-workspace/operators.1674636753/manifests-redhat-operator-index
+
+To upload local images to a registry, run:
+
+	oc adm catalog mirror file://redhat/redhat-operator-index:v4.11 REGISTRY/REPOSITORY
+<dir>
+  compliance/openshift-compliance-content-rhel8
+    blobs:
+      registry.redhat.io/compliance/openshift-compliance-content-rhel8 sha256:8f22d4683f52cb15d4fc883681b0b57d75bb522c4dcd4606302db410ef0bc5b2 10.38KiB
+      registry.redhat.io/compliance/openshift-compliance-content-rhel8 sha256:47ae89ef182fe1991cdf287cc0a5ad2b790399e31ded462cccdaf12c95ddb7d5 10.38KiB
+      registry.redhat.io/compliance/openshift-compliance-content-rhel8 sha256:1633995e1cc61ee1daf42874f4e7294c40266f9b89f7ef09f3f958394ecdbff8 10.39KiB
+      registry.redhat.io/compliance/openshift-compliance-content-rhel8 sha256:d5256d50e853980e6ca1ecfab3884c70b43e46ae833f69447fb4c575aaddfb9e 838.7KiB
+      registry.redhat.io/compliance/openshift-compliance-content-rhel8 sha256:8284da9966bf291e41b1dc99682179b61510147300a45835b391cbce6fe31481 845.1KiB
+      registry.redhat.io/compliance/openshift-compliance-content-rhel8 sha256:e2d5214fde698bf5a72d98bf14ff440e13e050b86ae79a3c3d66e36c19b764e2 864.3KiB
+      registry.redhat.io/compliance/openshift-compliance-content-rhel8 sha256:f8eb393f0a44918c6e0067166d13e907172f062ccaab8769b7dbe314980de52f 35.72MiB
+      registry.redhat.io/compliance/openshift-compliance-content-rhel8 sha256:762908e901a628d2f6f7967c6f0ea9c3723c0c53318592508c518772afaa417d 37.38MiB
+      registry.redhat.io/compliance/openshift-compliance-content-rhel8 sha256:d3ed8aa0df2d31a4dd51034d2bef57e7dc46c40da4420d3d45e3721f6033d7af 41.94MiB
+    manifests:
+      sha256:2246859e542eebfad9b9f5714d7a4048dd1a324b43b167ff3f4645a8940129c8
+      sha256:23fee2ed2ba47a08b55df3a4b1c65da10ffe75fb21dedb4312ad8921acc1c820
+      sha256:48573f971bb3d5a6856360c770dd6402448d0b4af2c268094e7ba3b7d4fa88bb
+      sha256:665a7ba4e3bb698cd5a65ca177cb5f1173149d62b54c4c65cd9337a5d4c6dc14
+      sha256:23fee2ed2ba47a08b55df3a4b1c65da10ffe75fb21dedb4312ad8921acc1c820 -> ce1c7269
+  compliance/openshift-compliance-openscap-rhel8
+    blobs:
+      registry.redhat.io/compliance/openshift-compliance-openscap-rhel8 sha256:c6181e94f8cabd253db273c606cbd92839c1a62db1c111f002be8cc86b861b1f 13.64KiB
+      registry.redhat.io/compliance/openshift-compliance-openscap-rhel8 sha256:437f070c60d41a646d3fe2f14088fb373c083ea22a92d41dabd7e7119533e030 13.65KiB
+      registry.redhat.io/compliance/openshift-compliance-openscap-rhel8 sha256:4213dfb57f63e36f70d7b5668c8bf1104be0b0ff50a37021712b19cc9a9bae10 13.66KiB
+      registry.redhat.io/compliance/openshift-compliance-openscap-rhel8 sha256:a041a67263204ef93b1d844ae9612513cca7b53846c8715876c05227d05d0df7 17.46MiB
+      registry.redhat.io/compliance/openshift-compliance-openscap-rhel8 sha256:48a25d50f8cfa7e263bfaea4a57ad735e82a9b9c4ca7eb127c4915632719c3cd 17.82MiB
+      registry.redhat.io/compliance/openshift-compliance-openscap-rhel8 sha256:316d1b73cbfce417834afa064099f755238c649f64b96045618d1581b0e70554 17.94MiB
+      registry.redhat.io/compliance/openshift-compliance-openscap-rhel8 sha256:eb752d70ad55b44e7b7ab77242bc94fe54cd92fe176183c3ac596d6142675f99 72.65MiB
+      registry.redhat.io/compliance/openshift-compliance-openscap-rhel8 sha256:a35c1966a5a57c8956e6f213c259e7784e7a69c161a9e1fc0ec3b798eb3bdcf9 75.51MiB
+      registry.redhat.io/compliance/openshift-compliance-openscap-rhel8 sha256:26723cf9a6a743370ccb50fccd31af2fca00353c3bef9ffd08e36b431514792f 81.83MiB
+    manifests:
+      sha256:2aa08faf069caf68087722f144a0966511a04df3729ac744372fe75fb8eeab87
+      sha256:a7ca180b903152f7a0bfeecdc4659f5967961057a5317067b98098ebadc2b233
+      sha256:d7ea05028fc24ec2bed1b0466a422b4698b2e244c63bfa7468dd95f8735e5125
+      sha256:d9ea817721083ff12b4c54f09d5fdaf0200386a3dbd9a1986b407f79b1d7d90c
+      sha256:d9ea817721083ff12b4c54f09d5fdaf0200386a3dbd9a1986b407f79b1d7d90c -> 20c3c0c4
+  compliance/openshift-compliance-operator-bundle
+    blobs:
+      registry.redhat.io/compliance/openshift-compliance-operator-bundle sha256:2898a73d8dcdf7661a8feff053916e5fc6269bf12355eee1f4be25ceeeb7647b 6.651KiB
+      registry.redhat.io/compliance/openshift-compliance-operator-bundle sha256:421f0fa63766d1267e930b6827803a6ca3a9ba6897a5fc8b128ffa66f4395431 33.55KiB
+    manifests:
+      sha256:73dd20274f659f414801275b1a2d64037f9fbc5e56d11f7941cb047659cd0cc4 -> e97114fc
+  compliance/openshift-compliance-rhel8-operator
+    blobs:
+      registry.redhat.io/compliance/openshift-compliance-rhel8-operator sha256:f1d46a1cfcc1e0aa70863b79a9099ce44c37284bc2c3e84e8f8adc3d97a4074d 13.64KiB
+      registry.redhat.io/compliance/openshift-compliance-rhel8-operator sha256:48dfcf5c656b6754772b8e8cc6fbb8f1d19735f73888dd34841ad2a8c13962ca 13.64KiB
+      registry.redhat.io/compliance/openshift-compliance-rhel8-operator sha256:837cecb5aff085e9657f074639dbb2417ceeccc50dc4ca56315ee30698fb6d78 13.64KiB
+      registry.redhat.io/compliance/openshift-compliance-rhel8-operator sha256:1ace39af7c98e0e46a8568607c4a4050951a783549723f719a4242d67bde2d53 27.04MiB
+      registry.redhat.io/compliance/openshift-compliance-rhel8-operator sha256:8212faac14334e20ed53a9e9366a901a1c2b39618db17c6381681d6db5a75362 31.33MiB
+      registry.redhat.io/compliance/openshift-compliance-rhel8-operator sha256:ceae0b1d5312e35200ea4342001fcdb8243c5785c8b7f5303971e94407cad828 31.46MiB
+      registry.redhat.io/compliance/openshift-compliance-rhel8-operator sha256:f8eb393f0a44918c6e0067166d13e907172f062ccaab8769b7dbe314980de52f 35.72MiB
+      registry.redhat.io/compliance/openshift-compliance-rhel8-operator sha256:762908e901a628d2f6f7967c6f0ea9c3723c0c53318592508c518772afaa417d 37.38MiB
+      registry.redhat.io/compliance/openshift-compliance-rhel8-operator sha256:d3ed8aa0df2d31a4dd51034d2bef57e7dc46c40da4420d3d45e3721f6033d7af 41.94MiB
+    manifests:
+      sha256:148c34c07c02b57bd6ae4c03c87a89ae30f7b4b84b3de768aca4ca853853891c
+      sha256:45a618f8314e970a48d2c19eef5b58fd5f588b9ba55335a916d27f242b74c7fe
+      sha256:7c413b89d16cec0a73ebf6184e8fdfb6ec073d3dac6b5616f7cf73e0b9af695d
+      sha256:d5ffc7bb776bc1a3717a37ae0a08990a4db2313f3cbc1f1313ce2765ed39b011
+      sha256:d5ffc7bb776bc1a3717a37ae0a08990a4db2313f3cbc1f1313ce2765ed39b011 -> 7c36e8d6
+  stats: shared=3 unique=23 size=490.7MiB ratio=0.77
+
+phase 0:
+   compliance/openshift-compliance-operator-bundle blobs=2 mounts=0 manifests=1 shared=0
+   compliance/openshift-compliance-openscap-rhel8  blobs=9 mounts=0 manifests=5 shared=0
+   compliance/openshift-compliance-content-rhel8   blobs=9 mounts=0 manifests=5 shared=3
+phase 1:
+   compliance/openshift-compliance-rhel8-operator blobs=9 mounts=3 manifests=5 shared=3
+
+info: Planning completed in 2.72s
+uploading: file://compliance/openshift-compliance-openscap-rhel8 sha256:26723cf9a6a743370ccb50fccd31af2fca00353c3bef9ffd08e36b431514792f 81.83MiB
+uploading: file://compliance/openshift-compliance-operator-bundle sha256:421f0fa63766d1267e930b6827803a6ca3a9ba6897a5fc8b128ffa66f4395431 33.55KiB
+uploading: file://compliance/openshift-compliance-openscap-rhel8 sha256:eb752d70ad55b44e7b7ab77242bc94fe54cd92fe176183c3ac596d6142675f99 72.65MiB
+uploading: file://compliance/openshift-compliance-openscap-rhel8 sha256:a35c1966a5a57c8956e6f213c259e7784e7a69c161a9e1fc0ec3b798eb3bdcf9 75.51MiB
+uploading: file://compliance/openshift-compliance-openscap-rhel8 sha256:48a25d50f8cfa7e263bfaea4a57ad735e82a9b9c4ca7eb127c4915632719c3cd 17.82MiB
+uploading: file://compliance/openshift-compliance-openscap-rhel8 sha256:a041a67263204ef93b1d844ae9612513cca7b53846c8715876c05227d05d0df7 17.46MiB
+uploading: file://compliance/openshift-compliance-openscap-rhel8 sha256:316d1b73cbfce417834afa064099f755238c649f64b96045618d1581b0e70554 17.94MiB
+uploading: file://compliance/openshift-compliance-content-rhel8 sha256:762908e901a628d2f6f7967c6f0ea9c3723c0c53318592508c518772afaa417d 37.38MiB
+uploading: file://compliance/openshift-compliance-content-rhel8 sha256:d3ed8aa0df2d31a4dd51034d2bef57e7dc46c40da4420d3d45e3721f6033d7af 41.94MiB
+uploading: file://compliance/openshift-compliance-content-rhel8 sha256:8284da9966bf291e41b1dc99682179b61510147300a45835b391cbce6fe31481 845.1KiB
+uploading: file://compliance/openshift-compliance-content-rhel8 sha256:f8eb393f0a44918c6e0067166d13e907172f062ccaab8769b7dbe314980de52f 35.72MiB
+uploading: file://compliance/openshift-compliance-content-rhel8 sha256:d5256d50e853980e6ca1ecfab3884c70b43e46ae833f69447fb4c575aaddfb9e 838.7KiB
+sha256:73dd20274f659f414801275b1a2d64037f9fbc5e56d11f7941cb047659cd0cc4 file://compliance/openshift-compliance-operator-bundle:e97114fc
+uploading: file://compliance/openshift-compliance-content-rhel8 sha256:e2d5214fde698bf5a72d98bf14ff440e13e050b86ae79a3c3d66e36c19b764e2 864.3KiB
+sha256:665a7ba4e3bb698cd5a65ca177cb5f1173149d62b54c4c65cd9337a5d4c6dc14 file://compliance/openshift-compliance-content-rhel8
+sha256:2246859e542eebfad9b9f5714d7a4048dd1a324b43b167ff3f4645a8940129c8 file://compliance/openshift-compliance-content-rhel8
+sha256:48573f971bb3d5a6856360c770dd6402448d0b4af2c268094e7ba3b7d4fa88bb file://compliance/openshift-compliance-content-rhel8
+sha256:23fee2ed2ba47a08b55df3a4b1c65da10ffe75fb21dedb4312ad8921acc1c820 file://compliance/openshift-compliance-content-rhel8:ce1c7269
+sha256:2aa08faf069caf68087722f144a0966511a04df3729ac744372fe75fb8eeab87 file://compliance/openshift-compliance-openscap-rhel8
+sha256:a7ca180b903152f7a0bfeecdc4659f5967961057a5317067b98098ebadc2b233 file://compliance/openshift-compliance-openscap-rhel8
+sha256:d7ea05028fc24ec2bed1b0466a422b4698b2e244c63bfa7468dd95f8735e5125 file://compliance/openshift-compliance-openscap-rhel8
+sha256:d9ea817721083ff12b4c54f09d5fdaf0200386a3dbd9a1986b407f79b1d7d90c file://compliance/openshift-compliance-openscap-rhel8:20c3c0c4
+mounted: file://compliance/openshift-compliance-rhel8-operator sha256:f8eb393f0a44918c6e0067166d13e907172f062ccaab8769b7dbe314980de52f 35.72MiB
+mounted: file://compliance/openshift-compliance-rhel8-operator sha256:762908e901a628d2f6f7967c6f0ea9c3723c0c53318592508c518772afaa417d 37.38MiB
+mounted: file://compliance/openshift-compliance-rhel8-operator sha256:d3ed8aa0df2d31a4dd51034d2bef57e7dc46c40da4420d3d45e3721f6033d7af 41.94MiB
+uploading: file://compliance/openshift-compliance-rhel8-operator sha256:1ace39af7c98e0e46a8568607c4a4050951a783549723f719a4242d67bde2d53 27.04MiB
+uploading: file://compliance/openshift-compliance-rhel8-operator sha256:8212faac14334e20ed53a9e9366a901a1c2b39618db17c6381681d6db5a75362 31.33MiB
+uploading: file://compliance/openshift-compliance-rhel8-operator sha256:ceae0b1d5312e35200ea4342001fcdb8243c5785c8b7f5303971e94407cad828 31.46MiB
+sha256:45a618f8314e970a48d2c19eef5b58fd5f588b9ba55335a916d27f242b74c7fe file://compliance/openshift-compliance-rhel8-operator
+sha256:7c413b89d16cec0a73ebf6184e8fdfb6ec073d3dac6b5616f7cf73e0b9af695d file://compliance/openshift-compliance-rhel8-operator
+sha256:148c34c07c02b57bd6ae4c03c87a89ae30f7b4b84b3de768aca4ca853853891c file://compliance/openshift-compliance-rhel8-operator
+sha256:d5ffc7bb776bc1a3717a37ae0a08990a4db2313f3cbc1f1313ce2765ed39b011 file://compliance/openshift-compliance-rhel8-operator:7c36e8d6
+info: Mirroring completed in 1m10.59s (7.289MB/s)
+Creating archive /root/labs/media/compliance/mirror_seq1_000000.tar

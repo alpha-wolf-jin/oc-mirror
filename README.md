@@ -248,6 +248,8 @@ Writing ICSP manifests to oc-mirror-workspace/results-1674629926
 │       │   └── signature-sha256-22e149142517dfcc.json
 │       └── updateService.yaml
 └── publish
+
+6 directories, 8 files
 ```
 
 With the mirrored registry, the air-gapped installation can be performed with the following configuration.
@@ -276,11 +278,6 @@ spec:
   - mirrors:
     - helper.example.com:8443/openshift/release-images
     source: quay.io/openshift-release-dev/ocp-release
-```
-
-6 directories, 8 files
-
-
 ```
 
 
@@ -345,6 +342,31 @@ mirror:
       - name: release-0.1
 
 # oc mirror --config=imageset-operator.yaml file:///root/labs/media/compliance
+...
+sha256:45a618f8314e970a48d2c19eef5b58fd5f588b9ba55335a916d27f242b74c7fe file://compliance/openshift-compliance-rhel8-operator
+sha256:7c413b89d16cec0a73ebf6184e8fdfb6ec073d3dac6b5616f7cf73e0b9af695d file://compliance/openshift-compliance-rhel8-operator
+sha256:148c34c07c02b57bd6ae4c03c87a89ae30f7b4b84b3de768aca4ca853853891c file://compliance/openshift-compliance-rhel8-operator
+sha256:d5ffc7bb776bc1a3717a37ae0a08990a4db2313f3cbc1f1313ce2765ed39b011 file://compliance/openshift-compliance-rhel8-operator:7c36e8d6
+info: Mirroring completed in 1m10.59s (7.289MB/s)
+Creating archive /root/labs/media/compliance/mirror_seq1_000000.tar
 
 ```
 
+# Mirror the operator to registry from disk
+
+```
+# cd /root/labs/media/compliance/
+[root@helper compliance]# tree
+.
+├── mirror_seq1_000000.tar
+├── oc-mirror-workspace
+└── publish
+
+2 directories, 1 file
+```
+
+**Specify the registry path**
+
+```
+# oc mirror --from=./mirror_seq1_000000.tar docker://helper.example.com:8443/compliance
+```
