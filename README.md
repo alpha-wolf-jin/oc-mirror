@@ -37,6 +37,24 @@ Kustomize Version: v4.5.4
 Server Version: 4.11.18
 Kubernetes Version: v1.24.6+5658434
 
+# oc-mirror list operators --catalogs --version=4.12
+Available OpenShift OperatorHub catalogs:
+OpenShift 4.12:
+registry.redhat.io/redhat/redhat-operator-index:v4.12
+registry.redhat.io/redhat/certified-operator-index:v4.12
+registry.redhat.io/redhat/community-operator-index:v4.12
+registry.redhat.io/redhat/redhat-marketplace-index:v4.12
+
+# oc-mirror list operators --catalog=registry.redhat.io/redhat/redhat-operator-index:v4.12
+NAME                                          DISPLAY NAME                                             DEFAULT CHANNEL
+3scale-operator                               Red Hat Integration - 3scale                             threescale-2.13
+advanced-cluster-management                   Advanced Cluster Management for Kubernetes               release-2.7
+amq-broker-rhel8                              Red Hat Integration - AMQ Broker for RHEL 8 (Multiarch)  7.11.x
+amq-online                                    Red Hat Integration - AMQ Online                         stable
+amq-streams                                   AMQ Streams                                              stable
+amq7-interconnect-operator                    Red Hat Integration - AMQ Interconnect                   1.10.x
+
+
 $ oc mirror help
 ...
 Examples:
